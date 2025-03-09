@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# Recipe Management System - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend for a **Recipe Management System** built with **React**. It provides a user-friendly interface for managing recipes, including features like user authentication, recipe creation, editing, and viewing. The frontend interacts with a backend API to fetch and manage data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Authentication**:
+  - Login and signup functionality.
+  - JWT token-based authentication.
+- **Recipe Management**:
+  - View a list of recipes.
+  - View detailed information about a specific recipe.
+  - Create new recipes.
+  - Edit existing recipes.
+- **Image Upload**:
+  - Upload recipe images using a file or provide an image URL.
+- **Responsive Design**:
+  - Mobile-friendly and responsive UI.
+- **Theme Toggle**:
+  - Switch between light and dark themes.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: JavaScript library for building user interfaces.
+- **React Router**: For handling routing and navigation.
+- **Fetch**: For making HTTP requests to the backend API.
+- **CSS**: For styling components.
+- **FontAwesome**: For adding icons to the UI.
+- **Multer**: For handling image uploads (backend integration).
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Folder Structure
 
-### `npm run build`
+The project is organized as follows:
+```
+  src/
+  ├── components/
+  │ ├── Auth/
+  │ │ ├── Login.js
+  │ │ ├── Signup.js
+  │ │ └── index.css
+  │ ├── RecipeDetails/
+  │ │ ├── index.js
+  │ │ └── index.css
+  │ ├── RecipeEditForm/
+  │ │ ├── index.js
+  │ │ └── index.css
+  │ ├── RecipeList/
+  │ │ ├── index.js
+  │ │ └── index.css
+  │ └── RecipeSubmissionForm/
+  │ ├── index.js
+  │ └── index.css
+  ├── App.js
+  ├── App.css
+  ├── index.js
+  └── index.css
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Key Files and Folders
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **`components/Auth/`**: Contains components for user authentication (Login and Signup).
+- **`components/RecipeDetails/`**: Displays detailed information about a specific recipe.
+- **`components/RecipeEditForm/`**: Allows users to edit existing recipes.
+- **`components/RecipeList/`**: Displays a list of all recipes.
+- **`components/RecipeSubmissionForm/`**: Allows users to create new recipes.
+- **`App.js`**: Main application component with routing and theme toggling.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+### 1. Clone the repository
+   ```bash
+   git clone https://github.com/seshu362/Wantace-Recipe-Assignment.git
+   cd Wantace-Recipe-Assignment/frontend--project
+   ```
+### 2. Install Dependencies
+```
+  npm install
+```
+### 2. Start the development server:
+```
+  npm start
+```
+The application will start on http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# API Integration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The frontend interacts with the backend API for the following operations:
 
-### Code Splitting
+## Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Login**: `POST /login`
+- **Signup**: `POST /signup`
 
-### Analyzing the Bundle Size
+## Recipe Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Get all recipes**: `GET /recipes`
+- **Get a single recipe**: `GET /recipes/:id`
+- **Create a recipe**: `POST /recipes`
+- **Update a recipe**: `PUT /recipes/:id`
 
-### Making a Progressive Web App
+## Image Upload
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Upload an image**: `POST /upload`
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Key Components
 
-### Deployment
+## 1. App Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Manages the theme (light/dark mode).
+- Handles user authentication and routing.
+- Displays a logout button for authenticated users.
 
-### `npm run build` fails to minify
+## 2. RecipeList Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Fetches and displays a list of recipes.
+- Provides a link to add a new recipe.
+
+## 3. RecipeDetails Component
+
+- Displays detailed information about a specific recipe.
+- Allows users to navigate back to the recipe list or edit the recipe.
+
+## 4. RecipeSubmissionForm Component
+
+- Allows users to submit a new recipe.
+- Supports image upload via file or URL.
+
+## 5. RecipeEditForm Component
+
+- Allows users to edit an existing recipe.
+- Pre-fills the form with the current recipe data.
+
+## 6. Login and Signup Components
+
+- Handle user authentication.
+- Display validation errors and success messages.
